@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ReSeal Harrow — Bath, Sink & Basin Sealant Renewal</title>
+<meta name="description" content="Silicone sealant renewal and mould removal for baths, sinks and basins across Harrow, Stanmore and the surrounding 5 miles.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#16302E;
+    --chalk:#F1F4F2;
+    --teal:#2F6E68;
+    --teal-dark:#1F4C48;
+    --rust:#B84B2E;
+    --sand:#DFD9C9;
+    --line:#CFCABA;
+    --white:#FFFFFF;
+    --maxw:1120px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;scroll-padding-top:86px;}
+  body{
+    margin:0;
+    font-family:'Inter',-apple-system,'Segoe UI',sans-serif;
+    color:var(--ink);
+    background:var(--chalk);
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,.wordmark{font-family:'Space Grotesk',-apple-system,'Segoe UI',sans-serif;}
+  h1,h2,h3{margin:0 0 .4em;font-weight:600;letter-spacing:-.01em;}
+  p{margin:0 0 1em;}
+  a{color:inherit;}
+  img{max-width:100%;display:block;}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px;}
+  section{padding:88px 0;border-top:1px solid var(--line);}
+  section:first-of-type{border-top:none;}
+  .lede{max-width:56ch;color:#3C4E4C;}
+  .section-photo{
+    width:100%;
+    height:280px;
+    object-fit:cover;
+    border-radius:4px;
+    border:1px solid var(--line);
+    margin:0 0 34px;
+    box-shadow:0 12px 30px rgba(22,48,46,.08);
+  }
+  .section-photo.tall{height:340px;}
+  .contact-photo{height:240px;margin-top:34px;margin-bottom:0;}
+  @media (max-width:700px){
+    .section-photo{height:220px;}
+    .section-photo.tall{height:260px;}
+  }
+
+  /* ---------- Header ---------- */
+  header{
+    position:sticky;
+    top:0;left:0;right:0;
+    z-index:1000;
+    width:100%;
+    background:rgba(241,244,242,.94);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+    box-shadow:0 4px 16px rgba(22,48,46,.06);
+    opacity:0;
+    animation:headerFade .7s ease .15s forwards;
+  }
+  @keyframes headerFade{to{opacity:1;}}
+
+  .nav-bar{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:20px 24px;max-width:var(--maxw);margin:0 auto;
+  }
+  .wordmark{font-size:1.28rem;font-weight:700;color:var(--ink);text-decoration:none;display:flex;align-items:center;gap:8px;}
+  .wordmark span{color:var(--teal);}
+  nav.links{display:flex;gap:32px;list-style:none;margin:0;padding:0;}
+  nav.links a{text-decoration:none;font-size:.95rem;font-weight:500;color:var(--ink);padding-bottom:3px;border-bottom:1px solid transparent;transition:border-color .2s;}
+  nav.links a:hover{border-color:var(--teal);}
+  .nav-cta{
+    background:var(--rust);color:var(--white);text-decoration:none;
+    padding:10px 18px;border-radius:3px;font-size:.9rem;font-weight:600;
+    white-space:nowrap;
+  }
+  .hamburger{display:none;background:none;border:none;cursor:pointer;padding:6px;width:40px;height:36px;flex-direction:column;justify-content:center;gap:6px;}
+  .hamburger span{display:block;height:2px;width:100%;background:var(--ink);transition:transform .25s, opacity .25s;}
+  .mobile-menu{
+    display:none;flex-direction:column;gap:2px;background:var(--white);
+    border-top:1px solid var(--line);
+  }
+  .mobile-menu a{padding:16px 24px;text-decoration:none;color:var(--ink);border-bottom:1px solid var(--line);font-size:.98rem;}
+  .mobile-menu.open{display:flex;}
+
+  @media (max-width:840px){
+    nav.links, .nav-cta.desktop-only{display:none;}
+    .hamburger{display:flex;}
+  }
+
+  /* ---------- Reveal animation ---------- */
+  .reveal-up,.reveal-left,.reveal-right{opacity:0;transition:opacity .8s ease, transform .8s ease;}
+  .reveal-up{transform:translateY(46px);}
+  .reveal-left{transform:translateX(-56px);}
+  .reveal-right{transform:translateX(56px);}
+  .reveal-up.in,.reveal-left.in,.reveal-right.in{opacity:1;transform:translate(0,0);}
+  @media (prefers-reduced-motion:reduce){
+    .reveal-up,.reveal-left,.reveal-right{transition:none;opacity:1;transform:none;}
+    header{animation:none;opacity:1;}
+  }
+
+  /* ---------- Hero ---------- */
+  .hero{padding:64px 0 96px;border-top:none;}
+  .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:center;}
+  .hero h1{font-size:clamp(2.1rem,4.4vw,3.4rem);line-height:1.08;}
+  .hero .lede{font-size:1.08rem;margin-bottom:1.6em;}
+  .cta-row{display:flex;gap:14px;flex-wrap:wrap;}
+  .btn-primary{background:var(--rust);color:var(--white);text-decoration:none;padding:14px 26px;border-radius:3px;font-weight:600;font-size:.98rem;}
+  .btn-ghost{border:1px solid var(--ink);color:var(--ink);text-decoration:none;padding:13px 26px;border-radius:3px;font-weight:600;font-size:.98rem;}
+  .hero-badges{display:flex;gap:26px;margin-top:40px;flex-wrap:wrap;}
+  .hero-badges div{font-size:.85rem;color:#3C4E4C;}
+  .hero-badges strong{display:block;font-family:'Space Grotesk';font-size:1.5rem;color:var(--ink);}
+  .bead-art{width:100%;height:auto;}
+  @media (max-width:840px){.hero-grid{grid-template-columns:1fr;}.bead-art{max-width:340px;margin:0 auto;}}
+
+  /* ---------- About ---------- */
+  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;}
+  .about-grid h2{font-size:1.9rem;}
+  .stat-row{display:flex;gap:40px;margin-top:28px;}
+  .stat-row strong{display:block;font-family:'Space Grotesk';font-size:1.7rem;}
+  .stat-row span{font-size:.85rem;color:#3C4E4C;}
+  @media (max-width:760px){.about-grid{grid-template-columns:1fr;}}
+
+  /* ---------- Services ---------- */
+  .services-list{display:flex;flex-direction:column;border-top:1px solid var(--line);margin-top:36px;}
+  .service-row{display:grid;grid-template-columns:220px 1fr;gap:32px;padding:30px 0;border-bottom:1px solid var(--line);}
+  .service-row h3{font-size:1.15rem;color:var(--teal-dark);}
+  .service-row p{color:#3C4E4C;margin:0;max-width:62ch;}
+  @media (max-width:700px){.service-row{grid-template-columns:1fr;gap:8px;}}
+
+  .trigger-band{background:var(--ink);color:var(--chalk);border-top:none;}
+  .trigger-band h2{color:var(--white);font-size:1.7rem;}
+  .trigger-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:32px;}
+  .trigger-card{border-left:2px solid var(--rust);padding-left:18px;}
+  .trigger-card h3{color:var(--white);font-size:1.05rem;margin-bottom:.3em;}
+  .trigger-card p{color:#C7D3D1;font-size:.92rem;margin:0;}
+  @media (max-width:760px){.trigger-grid{grid-template-columns:1fr;}}
+
+  /* ---------- Tips ---------- */
+  .tips-list{list-style:none;margin:32px 0 0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:0 48px;}
+  .tips-list li{padding:16px 0;border-bottom:1px solid var(--line);display:flex;gap:14px;font-size:.96rem;color:#2A403E;}
+  .tips-list li::before{content:"";min-width:8px;height:8px;border-radius:50%;background:var(--teal);margin-top:8px;}
+  @media (max-width:700px){.tips-list{grid-template-columns:1fr;}}
+
+  /* ---------- Testimonials ---------- */
+  .test-strip{display:flex;gap:22px;overflow-x:auto;padding:36px 0 12px;scrollbar-width:thin;}
+  .test-card{min-width:280px;max-width:300px;border:1px solid var(--line);border-top:3px solid var(--teal);padding:22px;background:var(--white);flex-shrink:0;}
+  .test-person{display:flex;align-items:center;gap:12px;margin-bottom:12px;}
+  .avatar{width:42px;height:42px;border-radius:50%;background:var(--teal);color:var(--white);display:flex;align-items:center;justify-content:center;font-family:'Space Grotesk';font-weight:600;font-size:.9rem;flex-shrink:0;}
+  .test-person strong{display:block;font-size:.92rem;}
+  .test-person span{font-size:.78rem;color:#3C4E4C;}
+  .stars{color:var(--rust);font-size:.85rem;letter-spacing:2px;margin-bottom:8px;}
+  .test-card p{font-size:.92rem;color:#33403E;margin:0;}
+  .test-note{font-size:.8rem;color:#3C4E4C;margin-top:20px;}
+
+  /* ---------- Coverage / Map ---------- */
+  .coverage-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:44px;align-items:start;}
+  .area-tags{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px;}
+  .area-tags span{border:1px solid var(--line);padding:7px 14px;border-radius:20px;font-size:.85rem;}
+  .map-frame{width:100%;height:340px;border:1px solid var(--line);}
+  @media (max-width:840px){.coverage-grid{grid-template-columns:1fr;}}
+
+  /* ---------- Booking form ---------- */
+  .book-section{background:var(--sand);border-top:none;}
+  .book-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:52px;}
+  .form-card{background:var(--white);border:1px solid var(--line);padding:32px;}
+  .field{margin-bottom:18px;}
+  .field label{display:block;font-size:.85rem;font-weight:600;margin-bottom:6px;}
+  .field input,.field select,.field textarea{
+    width:100%;padding:11px 12px;border:1px solid var(--line);background:var(--chalk);
+    font-family:inherit;font-size:.95rem;border-radius:2px;
+  }
+  .field textarea{resize:vertical;min-height:90px;}
+  .field-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  .submit-btn{background:var(--rust);color:var(--white);border:none;padding:14px 26px;font-weight:600;font-size:.98rem;border-radius:3px;cursor:pointer;width:100%;}
+  .form-success{display:none;background:var(--teal-dark);color:var(--white);padding:16px;margin-top:14px;font-size:.9rem;border-radius:3px;}
+  .form-success.show{display:block;}
+  .quick-book{margin-top:28px;display:flex;flex-direction:column;gap:12px;}
+  .quick-book a{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);font-size:.95rem;font-weight:500;border-bottom:1px solid var(--line);padding-bottom:12px;}
+  @media (max-width:840px){.book-grid{grid-template-columns:1fr;}.field-row{grid-template-columns:1fr;}}
+
+  /* ---------- Contact / footer ---------- */
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:40px;}
+  .contact-grid h3{font-size:1rem;color:var(--teal-dark);}
+  .contact-grid a{display:block;text-decoration:none;color:var(--ink);margin-bottom:10px;font-size:.94rem;}
+  .social-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:6px;}
+  .social-row a{border:1px solid var(--line);border-radius:50%;width:38px;height:38px;display:flex;align-items:center;justify-content:center;margin:0;}
+  .social-row svg{width:17px;height:17px;fill:var(--ink);}
+  @media (max-width:760px){.contact-grid{grid-template-columns:1fr;}}
+  footer{border-top:1px solid var(--line);padding:28px 0;font-size:.8rem;color:#3C4E4C;}
+  .foot-row{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;}
+</style>
+</head>
+<body>
+
+<header id="site-header">
+  <div class="nav-bar">
+    <a href="#top" class="wordmark">Re<span>Seal</span> Harrow</a>
+    <nav class="links">
+      <a href="#services">Services</a>
+      <a href="#tips">Mould tips</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#coverage">Coverage</a>
+      <a href="#book">Book</a>
+    </nav>
+    <a href="tel:+442012345678" class="nav-cta desktop-only">Call 020 1234 5678</a>
+    <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="#services">Services</a>
+    <a href="#tips">Mould tips</a>
+    <a href="#reviews">Reviews</a>
+    <a href="#coverage">Coverage</a>
+    <a href="#book">Book a repair</a>
+    <a href="tel:+442012345678">Call 020 1234 5678</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <h1 class="reveal-up in">The bead of silicone around your bath does more work than it gets credit for.</h1>
+        <p class="lede reveal-up in">When it blackens, splits or peels away, water gets behind the tub, sink or basin — and that's when the real damage starts. We strip out the old sealant and run a clean, mould‑resistant bead in its place, usually within the hour.</p>
+        <div class="cta-row reveal-up in">
+          <a href="#book" class="btn-primary">Book a repair</a>
+          <a href="tel:+442012345678" class="btn-ghost">Call 020 1234 5678</a>
+        </div>
+        <div class="hero-badges reveal-up in">
+          <div><strong>Harrow &amp; Stanmore</strong>plus 5 miles around</div>
+          <div><strong>Same‑week</strong>appointments most weeks</div>
+          <div><strong>10‑yr</strong>mould‑resistant silicone</div>
+        </div>
+      </div>
+      <img class="section-photo tall reveal-right in"
+           src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1000&q=85"
+           alt="Clean modern bathroom with a fresh, finished seal around the bath">
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="wrap about-grid">
+      <div class="reveal-left">
+        <h2>Who we are</h2>
+        <p class="lede">ReSeal Harrow is a two‑person local trade — Dave handles the resealing, Priya handles the diary and quotes. We only do one thing: stripping and renewing sealant around baths, sinks, basins and shower trays. Doing one job well means no half‑finished plumbing jobs and no upselling — just a tidy, watertight edge.</p>
+        <div class="stat-row">
+          <div><strong>7 yrs</strong><span>trading in Harrow</span></div>
+          <div><strong>1,400+</strong><span>seals completed</span></div>
+          <div><strong>4.9★</strong><span>average rating</span></div>
+        </div>
+      </div>
+      <div class="reveal-right">
+        <img class="section-photo" loading="lazy"
+             src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1000&q=85"
+             alt="Bright, clean modern bathroom">
+        <p class="lede">Most calls fall into one of three moments: a tenant or landlord getting a bathroom ready before check‑out, a new owner wanting a fresh start before moving boxes in, or a family who's simply noticed the sealant has gone grey, black or bitty and it's been a good while since it was last done. Whichever it is, we quote over the phone or by photo, and most jobs are done the same visit.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="wrap">
+      <img class="section-photo reveal-up" loading="lazy"
+           src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?auto=format&fit=crop&w=1400&q=85"
+           alt="Close-up of a modern bathroom and bath area">
+      <h2 class="reveal-up">What we reseal</h2>
+      <p class="lede reveal-up">Every job is strip, clean, dry, re‑bead — no sealant applied over old sealant, ever.</p>
+      <div class="services-list">
+        <div class="service-row reveal-left">
+          <h3>Bath surrounds</h3>
+          <p>Full strip‑out of cracked or blackened silicone along the tub edge and up‑stands, replaced with a single, even, mould‑resistant bead.</p>
+        </div>
+        <div class="service-row reveal-right">
+          <h3>Kitchen &amp; utility sinks</h3>
+          <p>Resealing around drop‑in and undermount sinks where the joint has lifted and water is tracking into the worktop or cabinet below.</p>
+        </div>
+        <div class="service-row reveal-left">
+          <h3>Wash hand basins</h3>
+          <p>Renewing the seal where the basin meets the wall or pedestal — a common spot for hairline mould that's easy to miss.</p>
+        </div>
+        <div class="service-row reveal-right">
+          <h3>Shower trays &amp; screens</h3>
+          <p>Re‑beading tray edges and screen frames, where a failed seal is the usual cause of water reaching the floor below.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="trigger-band">
+    <div class="wrap">
+      <img class="section-photo reveal-up" loading="lazy"
+           src="https://images.unsplash.com/photo-1584622781867-0d5e8d7e5c0d?auto=format&fit=crop&w=1400&q=85"
+           alt="Clean bathroom ready for use">
+      <h2 class="reveal-up">Not sure if it's time? Here's when people usually call.</h2>
+      <div class="trigger-grid">
+        <div class="trigger-card reveal-up">
+          <h3>Moving out</h3>
+          <p>A tired, stained seal is one of the first things a landlord or letting agent flags at check‑out. A fresh bead the day before handover sorts it.</p>
+        </div>
+        <div class="trigger-card reveal-up">
+          <h3>Moving in</h3>
+          <p>Easiest to do before furniture arrives and the bathroom's back in daily use — a clean start rather than sealing over someone else's wear.</p>
+        </div>
+        <div class="trigger-card reveal-up">
+          <h3>It's just been a while</h3>
+          <p>Sealant has a working life of three to five years. If yours has gone grey, gappy or you can't recall it ever being redone, it's due.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="tips">
+    <div class="wrap">
+      <img class="section-photo reveal-up" loading="lazy"
+           src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1400&q=85"
+           alt="Clean bathroom being maintained">
+      <h2 class="reveal-up">Keeping mould off a fresh seal</h2>
+      <p class="lede reveal-up">A new bead lasts a lot longer with a few small habits. None of these take more than a minute.</p>
+      <ul class="tips-list">
+        <li class="reveal-left">Run the extractor fan (or crack a window) during and for 15 minutes after a shower — trapped steam is the main cause of black mould.</li>
+        <li class="reveal-right">Give the sealant line a quick squeegee or towel wipe after bathing, rather than letting water sit in the joint.</li>
+        <li class="reveal-left">Rinse and wring out bath mats and shower curtains, and let them dry flat rather than bunched against the tub.</li>
+        <li class="reveal-right">Wipe the seal weekly with a mild bathroom cleaner rather than reaching for bleach daily, which can dry out silicone early.</li>
+        <li class="reveal-left">Don't caulk over an existing bead "to top it up" — trapped moisture underneath will still spread; it needs stripping back first.</li>
+        <li class="reveal-right">If a small dark spot appears, treat it straight away — early mould wipes off, established mould has usually gone into the silicone itself.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="reviews">
+    <div class="wrap">
+      <img class="section-photo reveal-up" loading="lazy"
+           src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1400&q=85"
+           alt="Fresh, welcoming home interior">
+      <h2 class="reveal-up">What customers say</h2>
+      <div class="test-strip">
+        <div class="test-card reveal-up">
+          <div class="test-person"><div class="avatar">RK</div><div><strong>Reema K.</strong><span>Stanmore</span></div></div>
+          <div class="stars">★★★★★</div>
+          <p>Sorted our en‑suite the morning before we moved in. Clean line, no mess left behind, and it took less time than the coffee I made them.</p>
+        </div>
+        <div class="test-card reveal-up">
+          <div class="test-person"><div class="avatar">TP</div><div><strong>Tom P.</strong><span>Harrow on the Hill</span></div></div>
+          <div class="stars">★★★★★</div>
+          <p>Landlord asked us to fix the mould in the bathroom before we handed the keys back. Booked Tuesday, done Thursday, deposit fully returned.</p>
+        </div>
+        <div class="test-card reveal-up">
+          <div class="test-person"><div class="avatar">AS</div><div><strong>Aisha S.</strong><span>Pinner</span></div></div>
+          <div class="stars">★★★★★</div>
+          <p>Honestly didn't realise how bad ours had got until it was redone. Should have called a couple of years earlier.</p>
+        </div>
+        <div class="test-card reveal-up">
+          <div class="test-person"><div class="avatar">GM</div><div><strong>Gary M.</strong><span>Wealdstone</span></div></div>
+          <div class="stars">★★★★★</div>
+          <p>Kitchen sink seal had lifted and water was getting into the cupboard below. Fixed same day, no fuss.</p>
+        </div>
+      </div>
+      <p class="test-note">Names and initials shown with permission. Full reviews available on request.</p>
+    </div>
+  </section>
+
+  <section id="coverage">
+    <div class="wrap">
+      <img class="section-photo reveal-up" loading="lazy"
+           src="https://images.unsplash.com/photo-1448630360428-65456885c650?auto=format&fit=crop&w=1400&q=85"
+           alt="Residential homes in a local neighbourhood">
+    </div>
+    <div class="wrap coverage-grid">
+      <div class="reveal-left">
+        <h2>Areas we cover</h2>
+        <p class="lede">Based in Harrow, working right across Harrow and Stanmore and out to about a 5‑mile radius. Outside that, give us a call — we can often still help.</p>
+        <div class="area-tags">
+          <span>Harrow</span><span>Stanmore</span><span>Pinner</span><span>Wealdstone</span>
+          <span>Kenton</span><span>Edgware</span><span>Harrow Weald</span><span>Hatch End</span>
+          <span>Belmont</span><span>North Harrow</span><span>Canons Park</span>
+        </div>
+      </div>
+      <div class="reveal-right">
+        <iframe class="map-frame" loading="lazy" src="https://www.google.com/maps?q=Harrow,+UK&z=12&output=embed" title="Map of Harrow, Stanmore and surrounding coverage area"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <section id="book" class="book-section">
+    <div class="wrap">
+      <img class="section-photo reveal-up" loading="lazy"
+           src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1400&q=85"
+           alt="Clean bathroom ready for a resealing service">
+    </div>
+    <div class="wrap book-grid">
+      <div class="reveal-left">
+        <h2>Book a repair</h2>
+        <p class="lede">Tell us a bit about the job and we'll come back to you with a time and a price — usually within a few hours.</p>
+        <div class="quick-book">
+          <a href="https://wa.me/442012345678" target="_blank" rel="noopener">Message us on WhatsApp instead →</a>
+          <a href="tel:+442012345678">Or call 020 1234 5678 →</a>
+        </div>
+      </div>
+      <div class="form-card reveal-right">
+        <form id="booking-form">
+          <div class="field-row">
+            <div class="field"><label for="name">Full name</label><input id="name" required></div>
+            <div class="field"><label for="phone">Phone number</label><input id="phone" type="tel" required></div>
+          </div>
+          <div class="field"><label for="email">Email</label><input id="email" type="email" required></div>
+          <div class="field"><label for="postcode">Postcode / area</label><input id="postcode" placeholder="e.g. HA1, HA7" required></div>
+          <div class="field">
+            <label for="reason">What's prompting the call?</label>
+            <select id="reason">
+              <option>Moving out — need it done before handover</option>
+              <option>Moving in — want a fresh seal before we settle in</option>
+              <option>Mould / discolouration on the current seal</option>
+              <option>It's just been a long time since it was last done</option>
+              <option>Something else</option>
+            </select>
+          </div>
+          <div class="field"><label for="msg">Anything else we should know</label><textarea id="msg" placeholder="Bath, sink or basin — and roughly how long the current seal has been there"></textarea></div>
+          <button type="submit" class="submit-btn">Request a quote</button>
+          <div class="form-success" id="form-success">Thanks — that's with us. Priya will call or email you back shortly to confirm a time.</div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap">
+      <img class="section-photo contact-photo reveal-up" loading="lazy"
+           src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=1400&q=85"
+           alt="Professional workspace">
+    </div>
+    <div class="wrap contact-grid">
+      <div class="reveal-up">
+        <h3>Talk to us</h3>
+        <a href="tel:+442012345678">020 1234 5678</a>
+        <a href="mailto:hello@resealharrow.co.uk">hello@resealharrow.co.uk</a>
+        <a href="https://wa.me/442012345678" target="_blank" rel="noopener">WhatsApp: 07123 456 789</a>
+        <a href="https://t.me/resealharrow" target="_blank" rel="noopener">Telegram: @resealharrow</a>
+      </div>
+      <div class="reveal-up">
+        <h3>Hours</h3>
+        <a>Mon–Fri: 8am – 6pm</a>
+        <a>Saturday: 9am – 2pm</a>
+        <a>Sunday: closed</a>
+      </div>
+      <div class="reveal-up">
+        <h3>Follow along</h3>
+        <div class="social-row">
+          <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2c2.7 0 3 .01 4.1.06 1.1.05 1.8.22 2.4.46.65.25 1.2.6 1.75 1.14.5.5.85 1.1 1.1 1.75.25.6.4 1.3.46 2.4.05 1.1.06 1.4.06 4.1s-.01 3-.06 4.1c-.05 1.1-.22 1.8-.46 2.4a4.7 4.7 0 0 1-1.14 1.75 4.7 4.7 0 0 1-1.75 1.1c-.6.25-1.3.4-2.4.46-1.1.05-1.4.06-4.1.06s-3-.01-4.1-.06c-1.1-.05-1.8-.22-2.4-.46a4.7 4.7 0 0 1-1.75-1.14 4.7 4.7 0 0 1-1.1-1.75c-.25-.6-.4-1.3-.46-2.4C2.01 15 2 14.7 2 12s.01-3 .06-4.1c.05-1.1.22-1.8.46-2.4.25-.65.6-1.2 1.14-1.75A4.7 4.7 0 0 1 5.4 2.65c.6-.25 1.3-.4 2.4-.46C8.9 2.01 9.2 2 12 2zm0 5a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 8.2a3.2 3.2 0 1 1 0-6.4 3.2 3.2 0 0 1 0 6.4zm5.2-8.4a1.2 1.2 0 1 1 0-2.4 1.2 1.2 0 0 1 0 2.4z"/></svg></a>
+          <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M13.5 21v-8h2.7l.4-3.1h-3.1V8c0-.9.25-1.5 1.55-1.5H16.7V3.7c-.3-.04-1.3-.13-2.4-.13-2.4 0-4 1.46-4 4.14V10H7.6v3.1h2.7v8h3.2z"/></svg></a>
+          <a href="https://youtube.com" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24"><path d="M22 12s0-3.2-.4-4.7a2.9 2.9 0 0 0-2-2C17.9 5 12 5 12 5s-5.9 0-7.6.3a2.9 2.9 0 0 0-2 2C2 8.8 2 12 2 12s0 3.2.4 4.7a2.9 2.9 0 0 0 2 2C6.1 19 12 19 12 19s5.9 0 7.6-.3a2.9 2.9 0 0 0 2-2C22 15.2 22 12 22 12zM10 15.5v-7l6 3.5-6 3.5z"/></svg></a>
+          <a href="https://nextdoor.co.uk" target="_blank" rel="noopener" aria-label="Nextdoor"><svg viewBox="0 0 24 24"><path d="M12 2 3 9v13h6v-7h6v7h6V9L12 2z"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap foot-row">
+    <span>© 2026 ReSeal Harrow. Family‑run, fully insured.</span>
+    <span>Harrow, Middlesex — covering a 5‑mile radius including Stanmore</span>
+  </div>
+</footer>
+
+<script>
+  // Header is permanently sticky via CSS.
+  const header = document.getElementById('site-header');
+
+  // Hamburger menu
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobile-menu');
+  hamburger.addEventListener('click', () => {
+    const open = mobileMenu.classList.toggle('open');
+    hamburger.setAttribute('aria-expanded', open);
+  });
+  mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.remove('open')));
+
+  // Scroll reveal
+  const revealEls = document.querySelectorAll('.reveal-up:not(.in), .reveal-left:not(.in), .reveal-right:not(.in)');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.15 });
+  revealEls.forEach(el => io.observe(el));
+
+  // Booking form (no backend attached — swap this for your own endpoint)
+  document.getElementById('booking-form').addEventListener('submit', function(e){
+    e.preventDefault();
+    document.getElementById('form-success').classList.add('show');
+    this.reset();
+  });
+</script>
+
+</body>
+</html>
